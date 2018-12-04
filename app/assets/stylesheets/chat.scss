@@ -1,0 +1,193 @@
+@mixin clearfix {
+  &::after {
+      content: "";
+      display: block;
+      clear: both;
+  }
+}
+
+@mixin height-width($height: 100px, $width: 100px) {
+  height: $height;
+  width: $width;
+}
+
+
+@mixin set-font ($color: $white, $fsize: 15px) {
+  color: $color;
+  font-size: $fsize;
+}
+
+
+
+@mixin position-absolute ($absolute: absolute,$top: 0,$right: 0,$left: 0,$bottom: 0,$margin: auto){
+  position: $absolute;
+  top: $top;
+  right: $right;
+  left: $left;
+  bottom: $bottom;
+  margin: $margin;
+}
+
+html {
+    height: 100vh;
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+}
+
+
+
+header {
+  @include set-font();
+  height: 40px;
+  background-color: $aqua;
+  text-align: center;
+  line-height: 40px;
+}
+
+.wrapper__content {
+  background-color: $white;
+  @include clearfix;
+  height: 100vh;
+}
+
+.privacy__content {
+  @include height-width (100vh,300px);
+  background-color: $navy;
+  float: left;
+  .setting__content {
+    @include height-width (60px,300px);
+    padding: 20px 0;
+    background-color: #253141;
+    position: relative;
+      h1 {
+        @include set-font ($white,16px);
+        font-weight: bold;
+        margin-left: 20px;
+        margin-top: 20px;
+        float: left;
+      }
+      i {
+        color: $white;
+        float: right;
+        margin-right: 10px;
+        margin-top: 23px;
+      }
+  }
+  .group__content {
+    padding: 20px, auto, 40px;
+    height: 100px;
+    li.name {
+      @include set-font($white, 15px);
+      padding-top: 20px;
+      margin-right: 20px;
+      margin-left: 20px;
+      list-style: none;
+    }
+    li.text {
+      @include set-font($white, 11px);
+      padding-top: 5px;
+      padding-bottom: 40px;
+      margin-right: 20px;
+      margin-left: 20px;
+      list-style: none;
+    }
+  }
+}
+
+.main-contents {
+  @include height-width(100vh,1140px);
+  float:right;
+  position: relative;
+  .message__content {
+    @include height-width(100px, 100%);
+    background-color: $white;
+    border-bottom: solid #eeeeee;
+    h1 {
+      @include set-font(#333333, 20px);
+      margin-bottom: 15px;
+      margin-top: 35px;
+      padding-left: 40px;
+      float: left;
+      font-weight: bold;
+    }
+    p {
+      @include set-font(#999999, 12px);
+      margin-bottom: 25px;
+      padding-left: 40px;
+      clear: both;
+    }
+    .edit__box {
+      @include height-width (40px, 70px);
+      text-align: center;
+      float: right;
+      margin-top: 30px;
+      color: $aqua;
+      border:  solid $aqua;
+      text-align: center;
+      line-height: 40px;
+      margin-right: 20px;
+    }
+  }
+ .message__box {
+  padding-left: 40px;
+  height: 100%;
+  background-color: $gray;
+    ul {
+      list-style: none;
+      padding-top: 35px;
+      padding-bottom: 40px;
+        li.message__name {
+          @include set-font(#434A54, 16px);
+          font-weight: bold;
+          float: left;
+        }
+        li.message__time {
+          @include set-font(#999999, 9px);
+          float: left;
+          line-height: 25px;
+          padding-left: 10px;
+        }
+        li.message__text {
+          @include set-font(#434A54, 14px);
+          clear: both;
+          padding-top: 10px;
+        }
+    }
+ }
+ footer{
+  @include height-width(100px, 1140px);
+  position: absolute;
+  bottom: 0;
+  background-color: #C0C0C0;
+    .form_box {
+      position: relative;
+      input {
+        @include set-font(#434A34,16px);
+        @include height-width (50px,1000px);
+        margin: 20px auto 20px 20px ;
+        float: left;
+      }
+      i {
+          position: absolute;
+          top: 40px;
+          right: 140px;
+        }
+      .send_button {
+        background-color: $aqua;
+        @include set-font($white,15px);
+        @include height-width(50px,70px);
+        border: solid $aqua;
+        text-align: center;
+        float: right;
+        margin-top: 20px;
+        line-height: 48px;
+        margin-right: 20px;
+      }
+    }
+ }
+}
+
+
