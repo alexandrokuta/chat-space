@@ -1,9 +1,9 @@
-%header チャットグループが作成されました。
 .wrapper__content
   .privacy__content
     .setting__content
-      %h1 Tatetsuji
-      %i.fa.fa-cog.fa-fw
+      %h1
+        = @user.name
+      = link_to '<i class="fa fa-cog"></i>'.html_safe,edit_user_path(current_user.id)
       %i.far.fa-edit.fa-fw
     .group__content
       %li.name ALEXANDROS
