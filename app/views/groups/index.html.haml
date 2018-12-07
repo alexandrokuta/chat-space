@@ -5,15 +5,11 @@
         = @user.name
       = link_to '<i class="fa fa-cog"></i>'.html_safe,edit_user_path(current_user.id)
       = link_to '<i class="far fa-edit"></i>'.html_safe,new_group_path
-    .group__content
-      %li.name ALEXANDROS
-      %li.text ワタリドリ
-    .group__content
-      %li.name One ok rock
-      %li.text Re:make
-    .group__content
-      %li.name Oasis
-      %li.text Whatever
+    - @groups.each do |group|
+      .group__content
+        %li.name
+          = group.group_name
+        %li.text nothing
   .main-contents
     .message__content
       %h1 ALEXANDROS
