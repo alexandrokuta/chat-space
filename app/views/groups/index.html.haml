@@ -13,7 +13,7 @@
   .main-contents
     .message__content
       %h1 ALEXANDROS
-      .edit__box Edit
+      = link_to "Edit", edit_group_path(@group), class: "edit__box"
       %p Members: tomohiro tady yuya
     .message__box
       %ul
