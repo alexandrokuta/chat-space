@@ -28,12 +28,9 @@
         %li.message__name tatetsuji
         %li.message__time 2018/12/04  19:00
         %li.message__text なぞ
-    %footer
-      .form_box
-        %input(placeholder = "type a message")
-          %a(href = "https://www.google.co.jp/?gfe_rd=cr&ei=stJwU9nQMKOT8QeK_4C4Dw")
-            %i.fas.fa-image.fa-fw
-        .send_button SEND
-
-
-
+      =form_for [@group,@message] do |f|
+        %footer
+          .form_box
+            = f.text_field :text
+            = f.file_field :image
+        = f.submit class: "send_button"
