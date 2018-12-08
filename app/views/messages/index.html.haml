@@ -1,0 +1,18 @@
+.wrapper_content
+  = render 'shared/side_bar'
+.main-contents
+  .message__content
+    %h1
+      = @group.group_name
+    = link_to "Edit", edit_group_path(@group), class: "edit__box"
+    %p Members: tomohiro tady yuya
+  .message__box
+    = render partial: 'message', collection:@messages
+  .form__content
+    = form_for [@group,@message] do |f|
+      .form__content__box
+        = f.text_field :text,placeholder: 'type a message',class: 'form_field'
+        = f.label :image,class: 'label' do
+          = fa_icon 'camera-retro', class: 'icon'
+          = f.file_field :image, class: 'hidden'
+        = f.submit "Send",class: "form__submit"
