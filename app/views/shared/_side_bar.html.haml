@@ -1,11 +1,12 @@
 .privacy__content
   .setting__content
     %h1
-      = @user.name
+      = current_user.name
     = link_to '<i class="fa fa-cog"></i>'.html_safe,edit_user_path(current_user.id)
     = link_to '<i class="far fa-edit"></i>'.html_safe,new_group_path
-    - @groups.each do |group|
+    - current_user.groups.each do |group|
       .group__content
         %li.name
-          = group.group_name
-        %li.text nothing
+          = link_to "#{group.group_name}", group_messages_path(group), style: "color:white"
+        %li.text
+          = group.show_last_message

@@ -82,10 +82,13 @@ header {
     height: 100px;
     li.name {
       @include set-font($white, 15px);
-      padding-top: 20px;
+      padding-top: 120px;
       margin-right: 20px;
       margin-left: 20px;
       list-style: none;
+        a{
+        text-decoration: none;
+        }
     }
     li.text {
       @include set-font($white, 11px);
@@ -116,7 +119,7 @@ header {
     }
     p {
       @include set-font(#999999, 12px);
-      margin-bottom: 25px;
+      margin-bottom: 2px;
       padding-left: 40px;
       clear: both;
     }
@@ -136,6 +139,7 @@ header {
   padding-left: 40px;
   height: 600px;
   background-color: $gray;
+  overflow: scroll;
     ul {
       list-style: none;
       padding-top: 35px;
@@ -158,37 +162,41 @@ header {
         }
     }
  }
- footer{
+
+.form__content {
   @include height-width(100px, 1140px);
   position: absolute;
   bottom: 0;
   background-color: #C0C0C0;
-    .form_box {
-      position: relative;
-      input {
-        @include set-font(#434A34,16px);
-        @include height-width (50px,1000px);
-        margin: 20px auto 20px 20px ;
-        float: left;
-      }
-      i {
-          position: absolute;
-          top: 40px;
-          right: 140px;
-        }
-      .send_button {
-        background-color: $aqua;
-        @include set-font($white,15px);
-        @include height-width(50px,70px);
-        border: solid $aqua;
-        text-align: center;
-        float: right;
-        margin-top: 20px;
-        line-height: 48px;
-        margin-right: 20px;
-      }
+  &__box {
+    position: relative;
+  }
+  .form_field {
+      @include set-font(#434A34,16px);
+      @include height-width (50px,1000px);
+      margin: 20px auto 20px 20px ;
+      float: left;
     }
+  .form__submit {
+      background-color: $aqua;
+      @include set-font($white,15px);
+      @include height-width(50px,70px);
+      border: solid $aqua;
+      text-align: center;
+      float: right;
+      margin-top: 21px;
+      line-height: 48px;
+      margin-right: 20px;
+   }
  }
+.label {
+  .fa-camera-retro:before {
+    font-size:30px;
+    @include position-absolute(absolute,31px,131px,none,0,auto)
+  }
+  .hidden {
+    display: none;
+  }
+  }
 }
-
 

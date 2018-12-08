@@ -1,0 +1,9 @@
+%ul
+  %li.message__name
+    = message.user.name
+  %li.message__time
+    = message.created_at
+  %li.message__text
+    - if message.text.present?
+      = message.text
+    = image_tag message.image.url if message.image.present?

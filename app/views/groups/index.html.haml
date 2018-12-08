@@ -1,27 +1,2 @@
 .wrapper__content
   = render 'shared/side_bar'
-
-  .main-contents
-    .message__content
-      %h1 ALEXANDROS
-      = link_to "Edit", edit_group_path(@group), class: "edit__box"
-      %p Members: tomohiro tady yuya
-    .message__box
-      %ul
-        %li.message__name tatetsuji
-        %li.message__time 2018/12/04  19:00
-        %li.message__text 全然分からへん
-      %ul
-        %li.message__name tatetsuji
-        %li.message__time 2018/12/04  19:00
-        %li.message__text まじで
-      %ul
-        %li.message__name tatetsuji
-        %li.message__time 2018/12/04  19:00
-        %li.message__text なぞ
-      =form_for [@group,@message] do |f|
-        %footer
-          .form_box
-            = f.text_field :text
-            = f.file_field :image
-            = f.submit
