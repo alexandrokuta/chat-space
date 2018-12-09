@@ -27,7 +27,6 @@
       %label.chat-group-form__label{:for => "chat_group_チャットメンバー"} チャットメンバー
     .chat-group-form__field--right
       = f.collection_check_boxes :user_ids, User.all, :id, :name
-      / この部分はインクリメンタルサーチ（ユーザー追加の非同期化のときに使用します
       /
         <div id='chat-group-users'>
         <div class='chat-group-user clearfix' id='chat-group-user-22'>
