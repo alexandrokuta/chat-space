@@ -58,6 +58,7 @@ header {
   @include height-width (100vh,300px);
   background-color: $navy;
   float: left;
+  overflow: scroll;
   .setting__content {
     @include height-width (60px,300px);
     padding: 20px 0;
@@ -137,7 +138,7 @@ header {
   }
  .message__box {
   padding-left: 40px;
-  height: 600px;
+  height: 510px;
   background-color: $gray;
   overflow: scroll;
     ul {
@@ -165,7 +166,7 @@ header {
 
 .form__content {
   @include height-width(100px, 1140px);
-  position: absolute;
+  position: fixed;
   bottom: 0;
   background-color: #C0C0C0;
   &__box {
