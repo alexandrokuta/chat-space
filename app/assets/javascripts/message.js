@@ -9,6 +9,7 @@ $(function(){
             </li>
             <li class="message__text">
              ${message.text}
+             ${ message.image == null ? "" : <img src="/uploads/message/image/${message.id}/${message.image}" alt="Sample  1 ">}
             </li>
             </ul>`
     return html;
@@ -28,11 +29,11 @@ $(function(){
     .done(function(data){
       var html = buildHTML(data);
       $('.message__box').append(html);
-      $('.form_field').val('')
+      $('.form_field')[0].reset();
+      $("html,body").animate({scrollTop:$('.message__box').offset().top});
     });
     .fail(function(){
       alert('error');
     });
   });
 });
-
