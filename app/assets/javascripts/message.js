@@ -9,7 +9,7 @@ $(function(){
             </li>
             <li class="message__text">
              ${message.text}
-             ${ message.image == null ? "" : <img src="/uploads/message/image/${message.id}/${message.image}" alt="Sample  1 ">}
+             ${ message.image == null ? "" : <img src="/uploads/message/image/${message.id}/${message.image}" >}
             </li>
             </ul>`
     return html;
