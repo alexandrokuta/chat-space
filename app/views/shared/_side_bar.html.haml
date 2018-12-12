@@ -6,9 +6,11 @@
       %i.fa.fa-cog
     = link_to new_group_path do
       %i.far.fa-edit
+  .group__content__wrapper
     - current_user.groups.each do |group|
       .group__content
         %li.name
           = link_to "#{group.group_name}", group_messages_path(group), style: "color:white"
         %li.text
           = group.show_last_message
+.stopper
