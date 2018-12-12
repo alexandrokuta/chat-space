@@ -11,11 +11,7 @@ RSpec.describe Message, type: :model do
         expect(build(:message, text: nil)).to be_valid
       end
 
-      it 'is valid with text and image' do
-        expect(build(:message, text: nil)).to be_valid
-      end
-
-      it 'isvalid with text and image' do
+      it 'is valid with content and image' do
         expect(build(:message)).to be_valid
       end
     end
@@ -24,13 +20,19 @@ RSpec.describe Message, type: :model do
       it 'is invalid without content and image' do
         message = build(:message, text: nil, image: nil)
         message.valid?
-        expect(message.errors[:text]).to include('を入力してください')
+        expect(message.errors[:text])
       end
 
-      it 'is invalid without user_id' do
+      it 'is invalid without group_id' do
+        message = build(:message, group_id: nil)
+        message.valid?
+        expect(message.errors[:group])
+      end
+
+      it 'is invaid without user_id' do
         message = build(:message, user_id: nil)
         message.valid?
-        expect(message.errors[:user]).to include('を入力してください')
+        expect(message.errors[:user])
       end
     end
   end

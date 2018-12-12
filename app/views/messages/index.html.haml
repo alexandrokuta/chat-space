@@ -1,3 +1,4 @@
+.wrapper_header
 .wrapper_content
   = render 'shared/side_bar'
 .main-contents
@@ -11,8 +12,9 @@
   .form__content
     = form_for [@group,@message] do |f|
       .form__content__box
-        = f.text_field :text,placeholder: 'type a message',class: 'form_field'
+        = f.text_field :text,placeholder: 'type a message',class: 'form_field',remote: 'true'
         = f.label :image,class: 'label' do
           = fa_icon 'camera-retro', class: 'icon'
           = f.file_field :image, class: 'hidden'
         = f.submit "Send",class: "form__submit"
+.wrapper_footer

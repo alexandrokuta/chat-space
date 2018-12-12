@@ -52,13 +52,17 @@ header {
   background-color: $white;
   @include clearfix;
   height: 100vh;
+  position: fixed;
+  width: 100%;
 }
 
 .privacy__content {
   @include height-width (100vh,300px);
   background-color: $navy;
   float: left;
+  position: relative;
   .setting__content {
+    @include position-absolute(absolute,0 ,0,none,0,auto);
     @include height-width (60px,300px);
     padding: 20px 0;
     background-color: #253141;
@@ -77,12 +81,16 @@ header {
         margin-top: 23px;
       }
   }
+  .group__content__wrapper{
+      width: 300px;
+      height: 100vh;
+      overflow: scroll;
   .group__content {
     padding: 20px, auto, 40px;
     height: 100px;
     li.name {
       @include set-font($white, 15px);
-      padding-top: 120px;
+      padding-top: 20px;
       margin-right: 20px;
       margin-left: 20px;
       list-style: none;
@@ -90,6 +98,12 @@ header {
         text-decoration: none;
         }
     }
+  }
+.stopper {
+    height: 10px;
+    width:  300px;
+    position:fixed;
+  }
     li.text {
       @include set-font($white, 11px);
       padding-top: 5px;
@@ -137,7 +151,7 @@ header {
   }
  .message__box {
   padding-left: 40px;
-  height: 600px;
+  height: 590px;
   background-color: $gray;
   overflow: scroll;
     ul {
@@ -165,7 +179,7 @@ header {
 
 .form__content {
   @include height-width(100px, 1140px);
-  position: absolute;
+  position: fixed;
   bottom: 0;
   background-color: #C0C0C0;
   &__box {
@@ -198,5 +212,15 @@ header {
     display: none;
   }
   }
+}
+
+.wrapper_header {
+  width: 100%;
+  position: fixed;
+}
+
+.wrapper_footer {
+  width: 100%;
+  position: fixed;
 }
 
