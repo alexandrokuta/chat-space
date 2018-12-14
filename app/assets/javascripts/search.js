@@ -1,12 +1,16 @@
 $(function(){
   var name_list = $('.chat-group-form__field--right2');
-  var default_name = $('.chat-group-form__field--js');
-    $(document).on('click','.user__name--add',function(){
+  var default_name = $('.chat-group-form__field.clearfix2');
+    $(document).on('click',".user__name--add",function(){
+      $(this).parent().remove();
     id = $(this).data("id");
     name = $(this).data("user");
     appendAddUser(id,name);
-    $('.user__name__wrapper').remove();
-});
+    console.log(document);
+    });
+    $(document).on('click',".user__name--delete", function(){
+      $(this).parent().remove();
+    })
   function appendUser(user) {
     var html =`<div class="user__name__wrapper">
                 <p class="user__name">
@@ -30,14 +34,18 @@ $(function(){
                         <p class="user__name2">
                         ${name}
                         </p>
-                        <a class="user__name--add" data-id=${id} data-user=${name}>削除</a>
+                        <a class="user__name--delete" data-id=${id} data-user=${name}>削除</a>
+                        <input value="${id}", name='group[user_ids][]' type="hidden" />
                         </div>
                         `
                         default_name.append(add_name_html);
   }
-  $('.chat-group-form__input').on('keyup', function(e){
+  $('.chat-group--user--form__input').on('keyup', function(e){
     e.preventDefault();
     var input = $(this).val();
+    if (input == 0) {
+      return false;
+    }
     $.ajax({
       url: '/users/search',  //どのアクションを動かすのか　今回はusersのsearchアクションを動かしたい
       type: 'GET',
@@ -45,8 +53,8 @@ $(function(){
       dataType:'json',
     })
     .done(function(users){
-      $('.user__name').empty();
-      if (users.length !== 0 ) {
+      $('.user__name__wrapper').remove();
+      if (users.length !== 0 && input !== 0) {
         users.forEach(function(user){
           appendUser(user);
         });

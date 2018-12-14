@@ -63,6 +63,7 @@
     .chat-group-form__field--right2 {
       float: right;
       width: 70%;
+      margin-top: -50px;
     }
 
     .chat-group-form__label {
@@ -73,6 +74,15 @@
     }
 
     .chat-group-form__input {
+      float: left;
+      width: 100%;
+      line-height: 30px;
+      padding: 10px 15px;
+      margin-top: 10px;
+      box-sizing: border-box;
+    }
+
+    .chat-group--user--form__input {
       float: left;
       width: 100%;
       line-height: 30px;
@@ -118,6 +128,7 @@
     color: #fff;
     background-color: #38aef0;
     border: 0;
+    margin-left: 100px;
   }
 }
 
@@ -131,6 +142,23 @@
       font-size: bold;
       float:left;
     .user__name--add {
+      padding-left: 40px;
+      float: right;
+    }
+    }
+  }
+
+    .user__name__wrapper2 {
+    width:627px;
+    border: 1px solid;
+    margin-top: 10px;
+    line-height: 50px;
+    float: right;
+    .user__name2 {
+      font-size: 20px;
+      font-size: bold;
+      float:left;
+    .user__name--delete {
       padding-left: 40px;
       float: right;
     }
