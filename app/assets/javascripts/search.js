@@ -53,7 +53,7 @@ $(function(){
     })
     .done(function(users){
       $('.user__name__wrapper').remove();
-      if (users.length !== 0 && input !== 0) {
+      if (users.length !== 0 ) {
         users.forEach(function(user){
           appendUser(user);
         });
