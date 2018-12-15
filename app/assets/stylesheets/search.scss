@@ -1,13 +1,19 @@
 li.user__name {
-  font-size:20px;
   list-style: none;
   font-weight: bold;
 }
-.user__name__wrapper__current__user {
-  width:627px;
-  border: 1px solid;
-  margin-top: 10px;
-  line-height: 50px;
-  height: 50px;
-  float: right;
-}
+  .user__name__wrapper__current__user {
+    padding: 0 15px;
+    line-height: 50px;
+    font-size: 14px;
+    border-bottom: 1px solid #ddd;
+    clear: both;
+    float: right;
+    width: 67%;
+    margin-top: -50px;
+    position: relative;
+    .user__name {
+      font-size: bold;
+      float:left;
+    }
+  }

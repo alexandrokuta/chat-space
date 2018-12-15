@@ -179,7 +179,6 @@ header {
 
 .form__content {
   @include height-width(100px, 1140px);
-  position: fixed;
   bottom: 0;
   background-color: #C0C0C0;
   &__box {

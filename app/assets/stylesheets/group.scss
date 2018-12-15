@@ -1,7 +1,7 @@
 .chat-group-form {
   width: 980px;
   margin: 60px auto;
-  padding: 40px;
+  padding-bottom: 180px;
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 5px;
@@ -129,39 +129,40 @@
     background-color: #38aef0;
     border: 0;
     margin-left: 100px;
+    height: 50px;
+    @include position-absolute(absolute,150px,530px,none,0,auto)
   }
 }
 
   .user__name__wrapper {
-    width:627px;
-    border: 1px solid;
-    margin-top: 10px;
+    padding: 0 15px;
     line-height: 50px;
+    font-size: 14px;
+    border-bottom: 1px solid #ddd;
+    clear: both;
     .user__name {
-      font-size: 20px;
       font-size: bold;
       float:left;
-    .user__name--add {
-      padding-left: 40px;
-      float: right;
-    }
     }
   }
 
-    .user__name__wrapper2 {
-    width:627px;
-    border: 1px solid;
-    margin-top: 10px;
+  .user__name--add {
+       float: right;
+    }
+  .user__name__wrapper2 {
+    padding: 0 15px;
     line-height: 50px;
+    font-size: 14px;
+    border-bottom: 1px solid #ddd;
+    clear: both;
     float: right;
+    width: 67%;
     .user__name2 {
-      font-size: 20px;
       font-size: bold;
       float:left;
-    .user__name--delete {
-      padding-left: 40px;
-      float: right;
-    }
     }
   }
+  .user__name--delete {
+    float: right;
+    }
 

@@ -21,6 +21,6 @@
       %label.chat-group-form__label{:for => "chat_group_チャットメンバー"} チャットメンバー
     .user__name__wrapper__current__user
       %p.user__name
-        = @current_user.name
+        = current_user.name
       = f.hidden_field :user_ids, name: 'group[user_ids][]', value: current_user.id
       = f.submit class: 'chat-group-form__action-btn'
