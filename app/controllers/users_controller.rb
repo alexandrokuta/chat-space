@@ -16,9 +16,7 @@ class UsersController < ApplicationController
   end
 
   def search
-    users = User.all
-    user = users.where.not("name = '#{current_user.name}'")
-    @users = user.where('name LIKE(?)', "%#{params[:keyword]}%")
+    @users = User.where.not("name = '#{current_user.name}'").where('name LIKE(?)', "%#{params[:keyword]}%")
     respond_to do |format|
       format.html
       format.json
@@ -29,5 +27,4 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :email)
   end
-
 end
