@@ -6,7 +6,6 @@ $(function(){
     id = $(this).data("id");
     name = $(this).data("user");
     appendAddUser(id,name);
-    console.log(document);
     });
     $(document).on('click',".user__name--delete", function(){
       $(this).parent().remove();
@@ -47,9 +46,9 @@ $(function(){
       return false;
     }
     $.ajax({
-      url: '/users/search',  //どのアクションを動かすのか　今回はusersのsearchアクションを動かしたい
+      url: '/users/search',
       type: 'GET',
-      data: { keyword: input }, //keyword: inputの表記でkeywordがusersコントローラーのsearchアクションで利用できる　擬似的にparamsを作るイメージ
+      data: { keyword: input },
       dataType:'json',
     })
     .done(function(users){
