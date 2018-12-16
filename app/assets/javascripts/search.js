@@ -3,8 +3,8 @@ $(function(){
   var default_name = $('.chat-group-form__field.clearfix2');
     $(document).on('click',".user__name--add",function(){
       $(this).parent().remove();
-    id = $(this).data("id");
-    name = $(this).data("user");
+    var id = $(this).data("id");
+    var name = $(this).data("user");
     appendAddUser(id,name);
     });
     $(document).on('click',".user__name--delete", function(){
