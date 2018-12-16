@@ -1,0 +1,19 @@
+li.user__name {
+  list-style: none;
+  font-weight: bold;
+}
+  .user__name__wrapper__current__user {
+    padding: 0 15px;
+    line-height: 50px;
+    font-size: 14px;
+    border-bottom: 1px solid #ddd;
+    clear: both;
+    float: right;
+    width: 67%;
+    margin-top: -50px;
+    position: relative;
+    .user__name {
+      font-size: bold;
+      float:left;
+    }
+  }
