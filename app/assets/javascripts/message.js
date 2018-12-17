@@ -4,7 +4,7 @@ $(function(){
     if (message.image.url){
       insertImage = `<img src="${message.image.url}">`;
     }
-    var html = `<ul data-id=${message.id}>
+    var html = `<ul class="message" data-message-id=${message.id}>
                 <li class="message__name">
                   ${message.name}
                 </li>
@@ -18,32 +18,6 @@ $(function(){
                 </ul>`
             return html;
   }
-  var id = $('ul:last-child').data('messageId');
-  var interval = setInterval(function(){
-    var insertHTML = '';
-    if (window.location.href.match(/\/groups\/\d+\/messages/)) {
-      $.ajax({
-        url: location.href,
-        dataType: 'json',
-      })
-      .done(function(data){
-        data.forEach(function(message){ //3
-          if (message.id > id) {
-            console.log(id)
-            console.log(message.id)
-            insertHTML += buildHTML(message);
-          }
-        });
-        $('.messages').append(insertHTML);
-      })
-      .fail(function(data){
-        alert('自動更新できません。更新するにはページを再度読み込んでください。');
-      });
-    } else {
-      clearInterval(interval);
-    }
-    id = $('ul:last-child').data('messageId');
-  }, 5000);
 
   $('#new_message').on('submit', function(e){
     var formData = new FormData(this);
@@ -66,7 +40,33 @@ $(function(){
     })
     .fail(function(data){
       alert('error')
-    })
+    });
+  });
 
-  })
-})
+  setInterval(function(){
+   if (location.href.match(/\/groups\/\d+\/messages/)){
+     var message_id = $('.message').last().data('message-id');
+     console.log(message_id );
+     var data = {id: message_id}
+     $.ajax({
+       type: 'GET',
+       url: location.href,
+       data: data,
+       dataType: 'json'
+     })
+     .done(function(messages){
+      console.log("成功");
+       messages.forEach(function(message){
+       console.log(message);
+       var html = buildHTML(message);
+       $('.message__box').append(html);
+       // Scroll()
+       });
+     })
+     .fail(function(message){
+       alert("自動更新に失敗しました");
+     });
+   }
+ }, 5000);
+
+});
