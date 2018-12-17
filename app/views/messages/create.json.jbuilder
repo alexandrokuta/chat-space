@@ -1,4 +1,5 @@
-json.text @message.text
-json.image @message.image
-json.name @message.user.name
-json.created_at @message.created_at
+json.text @messages.text
+json.name @messages.user.name
+json.created_at @messages.created_at
+json.id @messages.id
+json.image @messages.image
