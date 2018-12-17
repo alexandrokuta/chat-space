@@ -46,7 +46,6 @@ $(function(){
   setInterval(function(){
    if (location.href.match(/\/groups\/\d+\/messages/)){
      var message_id = $('.message').last().data('message-id');
-     console.log(message_id );
      var data = {id: message_id}
      $.ajax({
        type: 'GET',
@@ -55,9 +54,7 @@ $(function(){
        dataType: 'json'
      })
      .done(function(messages){
-      console.log("成功");
        messages.forEach(function(message){
-       console.log(message);
        var html = buildHTML(message);
        $('.message__box').append(html);
        $('.message__box').animate({scrollTop: $('.message__box')[0].scrollHeight});
