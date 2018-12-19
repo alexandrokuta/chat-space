@@ -9,7 +9,6 @@ server '52.192.13.241', user: 'ec2-user', roles: %w{app db web}
 # server "db.example.com", user: "deploy", roles: %w{db}
 
 
-
 # role-based syntax
 # ==================
 
