@@ -22,10 +22,10 @@
     .name__wrapper
       - group.users.each do |user|
         .user__name__wrapper2
+          = f.hidden_field :user_ids, name: 'group[user_ids][]', value: user.id
           %p.user__name2
             = user.name
           %a.user__name--delete 削除
-          = f.hidden_field :user_ids, name: 'group[user_ids][]', value: current_user.id
-    .submit__wrapper
-      .submit__box
-        = f.submit class: 'chat-group-form__action-btn', value: "Save"
+  .submit__wrapper
+    .submit__box
+      = f.submit class: 'chat-group-form__action-btn', value: "Save"

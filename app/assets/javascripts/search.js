@@ -1,5 +1,6 @@
 $(function(){
-  var name_list = $('.name__wrapper');
+  var name_list = $('.chat-group-form__field--right2');
+  var current_user_list = $('.name__wrapper');
     $(document).on('click',".user__name--add",function(){
       $(this).parent().remove();
     var id = $(this).data("id");
@@ -28,15 +29,15 @@ $(function(){
                 name_list.append(html);
   }
   function appendAddUser(id,name) {
-    var add_name_html =`<div class="user__name__wrapper2">
-                        <p class="user__name2">
+    var add_name_html =`<div class="user__name__wrapper3">
+                        <p class="user__name3">
                         ${name}
                         </p>
                         <a class="user__name--delete" data-id=${id} data-user=${name}>削除</a>
                         <input value="${id}", name='group[user_ids][]' type="hidden" />
                         </div>
                         `
-                        name_list.append(add_name_html);
+                        current_user_list.append(add_name_html);
   }
   $('.chat-group--user--form__input').on('keyup', function(e){
     e.preventDefault();

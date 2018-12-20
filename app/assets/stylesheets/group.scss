@@ -160,6 +160,21 @@
       float:left;
     }
   }
+    .user__name--add {
+       float: right;
+    }
+  .user__name__wrapper3 {
+    padding: 0 15px;
+    line-height: 50px;
+    font-size: 14px;
+    border-bottom: 1px solid #ddd;
+    clear: both;
+    height: 60px;
+    .user__name3 {
+      font-size: bold;
+      float:left;
+    }
+  }
   .user__name--delete {
     float: right;
     }

@@ -21,7 +21,6 @@ $(function(){
 
   $('#new_message').on('submit', function(e){
     var formData = new FormData(this);
-    console.log(formData)
     var url = $(this).attr('action');
     e.preventDefault();
     $.ajax({
@@ -41,7 +40,7 @@ $(function(){
       $('.message__box').animate({scrollTop: $('.message__box')[0].scrollHeight});
     })
     .fail(function(data){
-      alert('error')
+      alert('リロードしてください')
     });
   });
 
