@@ -1,6 +1,5 @@
 $(function(){
   var name_list = $('.name__wrapper');
-  var default_name = $('.chat-group-form__field.clearfix2');
     $(document).on('click',".user__name--add",function(){
       $(this).parent().remove();
     var id = $(this).data("id");
