@@ -19,8 +19,13 @@
     .chat-group-form__field.clearfix2
     .chat-group-form__field--left
       %label.chat-group-form__label{:for => "chat_group_チャットメンバー"} チャットメンバー
-    .user__name__wrapper__current__user
-      %p.user__name
-        = current_user.name
-      = f.hidden_field :user_ids, name: 'group[user_ids][]', value: current_user.id
-      = f.submit class: 'chat-group-form__action-btn'
+    .name__wrapper
+      - group.users.each do |user|
+        .user__name__wrapper2
+          %p.user__name2
+            = user.name
+          %a.user__name--delete 削除
+          = f.hidden_field :user_ids, name: 'group[user_ids][]', value: current_user.id
+    .submit__wrapper
+      .submit__box
+        = f.submit class: 'chat-group-form__action-btn', value: "Save"

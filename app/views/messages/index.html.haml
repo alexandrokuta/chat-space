@@ -6,9 +6,13 @@
       %h1
         = @group.group_name
       = link_to "Edit", edit_group_path(@group), class: "edit__box"
-      %p Members: tomohiro tady yuya
+      .member__box
+        %span  Member
+        %span
+          - @group.users.each do |user|
+            = user.name
     .message__box
-      = render partial: 'message', collection:@messages
+      = render partial: 'message', collection: @messages
     .form__content
       = form_for [@group,@message] do |f|
         .form__content__box

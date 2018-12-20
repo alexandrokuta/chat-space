@@ -19,6 +19,8 @@ class GroupsController < ApplicationController
   end
 
   def edit
+    users = @group.users
+    @users = users.where.not("name = '#{current_user.name}'")
   end
 
   def update

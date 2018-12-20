@@ -1,5 +1,5 @@
 $(function(){
-  var name_list = $('.chat-group-form__field--right2');
+  var name_list = $('.name__wrapper');
   var default_name = $('.chat-group-form__field.clearfix2');
     $(document).on('click',".user__name--add",function(){
       $(this).parent().remove();
@@ -37,7 +37,7 @@ $(function(){
                         <input value="${id}", name='group[user_ids][]' type="hidden" />
                         </div>
                         `
-                        default_name.append(add_name_html);
+                        name_list.append(add_name_html);
   }
   $('.chat-group--user--form__input').on('keyup', function(e){
     e.preventDefault();

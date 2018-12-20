@@ -127,10 +127,8 @@
     padding: 12px 20px;
     color: #fff;
     background-color: #38aef0;
-    border: 0;
-    margin-left: 100px;
-    height: 50px;
-    @include position-absolute(absolute,150px,530px,none,0,auto)
+    margin-top: 20px;
+    margin-left: 293px;
   }
 }
 
@@ -140,6 +138,7 @@
     font-size: 14px;
     border-bottom: 1px solid #ddd;
     clear: both;
+    height:50px;
     .user__name {
       font-size: bold;
       float:left;
@@ -155,8 +154,7 @@
     font-size: 14px;
     border-bottom: 1px solid #ddd;
     clear: both;
-    float: right;
-    width: 67%;
+    height: 60px;
     .user__name2 {
       font-size: bold;
       float:left;

@@ -123,6 +123,7 @@ header {
     @include height-width(100px, 100%);
     background-color: $white;
     border-bottom: solid #eeeeee;
+    position: relative;
     h1 {
       @include set-font(#333333, 20px);
       margin-bottom: 15px;
@@ -131,12 +132,16 @@ header {
       float: left;
       font-weight: bold;
     }
-    p {
+    .member__box {
+      height: 12px;
+      @include position-absolute(absolute,50px , 0, 0, 0,auto);
+    span {
       @include set-font(#999999, 12px);
       margin-bottom: 2px;
       padding-left: 40px;
-      clear: both;
+      clear: left;
     }
+  }
     .edit__box {
       @include height-width (40px, 70px);
       text-align: center;
@@ -149,6 +154,8 @@ header {
       margin-right: 20px;
     }
   }
+
+
  .message__box {
   padding-left: 40px;
   height: 590px;
@@ -222,4 +229,9 @@ header {
   width: 100%;
   position: fixed;
 }
+
+.submit__box {
+  height: 60px;
+}
+
 

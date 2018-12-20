@@ -37,6 +37,7 @@ $(function(){
       $('.message__box').append(html);
       $('.form_field').val("");
       $('#send_message1').prop("disabled", false);
+      $('form')[0].reset();
       $('.message__box').animate({scrollTop: $('.message__box')[0].scrollHeight});
     })
     .fail(function(data){
