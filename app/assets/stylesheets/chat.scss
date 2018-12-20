@@ -48,12 +48,8 @@ header {
   line-height: 40px;
 }
 
-.wrapper__content {
-  background-color: $white;
-  @include clearfix;
-  height: 100vh;
-  position: fixed;
-  width: 100%;
+wrapper_content {
+  height:100vh;
 }
 
 .privacy__content {
