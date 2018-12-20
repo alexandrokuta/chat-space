@@ -2,8 +2,10 @@
   %li.message__name
     = message.user.name
   %li.message__time
-    = message.created_at
+    = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
   %li.message__text
     - if message.text.present?
       = message.text
-    = image_tag message.image.url if message.image.present?
+  %li.message__image
+    - if message.image.present?
+      = image_tag message.image.url
