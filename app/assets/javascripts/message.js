@@ -19,6 +19,7 @@ $(function(){
             return html;
   }
 
+
   $('#new_message').on('submit', function(e){
     var formData = new FormData(this);
     var url = $(this).attr('action');
@@ -32,10 +33,10 @@ $(function(){
       contentType: false
     })
     .done(function(data){
+      $('#send_message1').prop("disabled", false);
       var html = buildHTML(data);
       $('.message__box').append(html);
       $('.form_field').val("");
-      $('#send_message1').prop("disabled", false);
       $('form')[0].reset();
       $('.message__box').animate({scrollTop: $('.message__box')[0].scrollHeight});
     })
