@@ -42,7 +42,7 @@ $(function(){
   $('.chat-group--user--form__input').on('keyup', function(e){
     e.preventDefault();
     var input = $(this).val();
-    if (input == 0) {
+    if (input.length == 0) {
       return false;
     }
     $.ajax({
